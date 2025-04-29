@@ -1,1 +1,35 @@
 # Week-5-ASSIGNMENT
+
+# Base class
+class Vehicle:
+    def move(self):
+        raise NotImplementedError("Subclasses must implement this method")
+
+# Subclasses with their own implementations of move()
+class Car(Vehicle):
+    def move(self):
+        print("Driving")
+
+class Plane(Vehicle):
+    def move(self):
+        print("Flying")
+
+class Boat(Vehicle):
+    def move(self):
+        print("Sailing")
+
+class Bicycle(Vehicle):
+    def move(self):
+        print("Pedaling")
+
+# Function that uses polymorphism
+def travel(vehicle: Vehicle):
+    vehicle.move()
+
+# Create a list of vehicles
+vehicles = [Car(), Plane(), Boat(), Bicycle()]
+
+# Let each vehicle move
+for v in vehicles:
+    travel(v)
+
